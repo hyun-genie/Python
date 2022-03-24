@@ -33,3 +33,4 @@ print(gcd_u(a,b))
 def lcm_u(a,b):
   return (a*b)//gcd_u(a,b)
 print(lcm_u(a,b))
+
