@@ -4,7 +4,7 @@ n = int(input())
 def sum(n):
   s = 0
   for i in range(1,n+1):
-    s += i
+    s+=i
   return s 
 print(sum(n))
 
@@ -13,7 +13,7 @@ print(sum(n))
 
 # 가우스의 합 공식 이용 알고리즘 n(n+1)/2
 def sum2(n):
-  return n*(n+1) // 2
+  return n*(n+1)//2
 print(sum2(n))
 
 # 가우스의 합 공식을 이용한 경우, 입력 크기 n이 아무리 커진다고 하더라도, 덧셈 1번, 곱셈 1번, 나눗셈 1번만 하면 된다. (총 3번)
