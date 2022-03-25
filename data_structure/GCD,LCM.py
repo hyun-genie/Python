@@ -31,6 +31,6 @@ print(gcd_u(a,b))
 # 최소공배수(LCM) 
 # 유클리드 이용 : 최소공배수는 a,b의 곱을 a,b의 최대공약수로 나누면 된다. 
 def lcm_u(a,b):
-  return (a*b)//gcd_u(a,b)
+  return (a*b) // gcd_u(a,b)
 print(lcm_u(a,b))
 
