@@ -46,7 +46,6 @@ class Stack:
 # 닫는 괄호를 만나게 되면 (가 나올때까지 계속 pop을 한다. 
 # 연산자를 만났을 경우, 여는 괄호 너머까지 pop을 하지 않도록 여는 괄호의 우선순위를 가장 낮게 설정한다. 
 
-    
 print('[infix->postfix] 수식을 입력하시오. ')
 t_list = input()
 opstack = Stack()
