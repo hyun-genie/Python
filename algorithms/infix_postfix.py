@@ -36,7 +36,7 @@ class Stack:
 # 피연산자는 outstack에 그대로 넣는다.
 # 연산자의 경우, 스택에 아무것도 없으면 push한다. 즉 첫번째 연산자는 스택에 push한다.
     
-# 스택 안의 연산자가 지금 넣으려는 연산자보다 우선순위가 높으면 pop후에 우선순위가 낮은 연산자는 스택에 push한다.  
+# 스택 안의 연산자가 지금 넣으려는 연산자보다 우선순위가 높으면 스택 안에 있는 연산자를 pop후에 우선순위가 낮은 현재 연산자는 스택에 push한다.  
 # 그 반대로 낮다면 스택에 순서대로 쌓이게 된다. 
 # 동일한 연산자의 경우, 먼저 push한 것을 pop하고, 동일한 연산자를 push한다. 
 # 스택의 맨 위에 있는 연산자와의 우선순위 비교 : top() 연산을 이용한다.
@@ -56,25 +56,32 @@ prec = {'*':3, '/':3, '+':2, '-':2, '(':1}
 for token in t_list:
   if token == '(':
     opstack.push(token)
-    
-  elif token == ')':
+
+  # 닫는 괄호를 만나게 될 경우 
+  elif token == ')': 
+    # 여는 괄호를 만날 때까지 pop
     while opstack.top() != '(':
       outstack += opstack.pop()
+    # 스택에 있는 여는 괄호 pop
     opstack.pop()
-    
+
+  # 
   else:
     if token in prec:
       if opstack.isEmpty():
         opstack.push(token)
-        
+      
+      # 스택에 있는 연산자들 중에서 현재의 연산자보다 우선 순위가 더 큰 경우 모드 pop 
       elif prec[opstack.top()] >= prec[token]:
         while not (opstack.isEmpty()) and (prec[opstack.top()] >= prec[token]):
           outstack += opstack.pop()
         opstack.push(token)   
-          
+
+      # 현재 연산자의 우선 순위가 더 큰 경우 
       else:
         opstack.push(token)     
-        
+
+    # 연산자들이 아닌 경우
     else: 
       outstack += token
     
