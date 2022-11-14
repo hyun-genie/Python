@@ -1,3 +1,12 @@
 {
-  "files": {}
+  "files": {
+    "Python/algorithms/DFS,BFS/문제/baekjoon_1260.py": [
+      {
+        "id": "a454d2d8-71ec-4dc7-83bd-0dc922768e24",
+        "line": 51,
+        "version": 3,
+        "index": 901
+      }
+    ]
+  }
 }
